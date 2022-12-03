@@ -14,26 +14,17 @@ float even_sum(int *arr, int n)
     }
     return (float)sum / count;
 }
-int prime_counter(int *arr, int n)
+int prime_counter(int n)
 {
-    int count = 0;
-    for (int i = 0; i < n; i++)
+    int i;
+    for(i=2;i<n;i++)
     {
-        int prime = 0;
-        for (int j = 2; j < arr[i]; j++)
+        if(n%i == 0)
         {
-            if (arr[i] % j == 0)
-            {
-                prime = 1;
-                break;
-            }
-        }
-        if (prime == 0 && arr[i] >= 2)
-        {
-            count++;
+            return 0;
         }
     }
-    return count;
+    return 1;
 }
 int main()
 {
@@ -44,6 +35,17 @@ int main()
     {
         scanf("%d", &arr[i]);
     }
-    printf("Prime numbers: %d\n", prime_counter(arr, n));
-    printf("Average of all even integers: %.2f\n",even_sum(arr, n));
+    int* ptr;
+    ptr=arr;
+    int count=0;
+    for(int i=0; i < n; i++)
+    {
+        if(prime_counter(*ptr))
+        {
+            count++;
+        }
+        ptr++;
+    }
+    printf("Prime numbers: %d\n", count);
+    printf("Average of all even integers: %.2f\n",even_sum(&arr, n));
 }
