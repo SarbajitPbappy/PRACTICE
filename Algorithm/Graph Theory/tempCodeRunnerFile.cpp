@@ -1,5 +1,6 @@
-for(int i =0;i<nodes;i++){
-    //     for(int j =0;j<nodes;j++){
-    //         matrix[i][j]=0;
-    //     }
-    // }
+6 5
+0 1
+2 3
+1 5
+2 4
+5 4
