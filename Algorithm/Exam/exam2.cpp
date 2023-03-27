@@ -22,17 +22,15 @@ void bfs(int src){
     }
 }
 int main(){
-    int nodes,edges;
-    cin>>nodes>>edges;
-    for(int i=0;i<edges;i++){
-        int u,v;
-        cin>>u>>v;
-        adj_list[u].push_back(v);
-        adj_list[v].push_back(u);
-    }
+    adj_list[0]={1,3,4};
+    adj_list[1]={0,2,5};
+    adj_list[2]={1,4};
+    adj_list[3]={0};
+    adj_list[4]={0,2,5};
+    adj_list[5]={1,4};
     int src=0;
     bfs(src);
-    for(int i=0; i<nodes;i++){
+    for(int i=0; i<6;i++){
         cout<<"node "<<i<<"-> level: "<<lvl_array[i]<<endl;
      }
 }

@@ -3,6 +3,7 @@ using namespace std;
 const int N=1e5;
 int visited[N];
 vector<int>adj_list[N];
+
 void dfs(int node){
     visited[node]=1;
     for(int adj_node: adj_list[node]){
@@ -11,6 +12,7 @@ void dfs(int node){
         }
     }
 }
+
 int countConnected(int nodes){
     int count = 0;
     for(int i=0; i<nodes; i++){
@@ -21,6 +23,16 @@ int countConnected(int nodes){
     }
     return count;
 }
+
+bool containsZero(vector<int> adj_list) {
+    for(int i = 0; i < adj_list.size(); i++) {
+        if(adj_list[i] == 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
 int main(){
     int nodes,edges;
     cin>>nodes>>edges;
@@ -30,5 +42,17 @@ int main(){
         adj_list[u].push_back(v);
         adj_list[v].push_back(u);
     }
-    cout<<countConnected(nodes)<<endl;
+    bool existZero = false;
+    for(int i = 0; i < nodes; i++) {
+        if(containsZero(adj_list[i])) {
+            existZero = true;
+            break;
+        }
+    }
+    if(existZero) {
+        cout << countConnected(nodes) << endl;
+    } else {
+        cout << countConnected(nodes)-1 << endl;
+    }
+    return 0;
 }
