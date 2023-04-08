@@ -39,11 +39,12 @@ int main(){
         if(visited[i]==0){
             bool cycle_found=cycle_detection(i);
             if(cycle_found){
-                cout<<"YES"<<endl;
+                cout<<"Cycle Exist"<<endl;
+                cycle_here=true;
                 break;
             }
             else{
-                cout<<"NO"<<endl;
+                cout<<"No Cycle"<<endl;
             }
         }
     }

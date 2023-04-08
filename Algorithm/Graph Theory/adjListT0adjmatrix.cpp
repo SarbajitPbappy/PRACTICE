@@ -91,23 +91,23 @@ void printMatrix(vector<vector<int> > adjList,int edges){
     }
 }
 int main(){
-    int edges=5;
+    int edges=4;
     // cin>>edges;
     vector<int>adjList[edges+1];
     insert(adjList,0,1);
-    insert(adjList,0,4);
-    insert(adjList,1,0);
-    insert(adjList,1,2);
     insert(adjList,1,3);
-    insert(adjList,1,4);
-    insert(adjList,2,1);
+    insert(adjList,1,2);
     insert(adjList,2,3);
-    insert(adjList,3,1);
-    insert(adjList,3,2);
-    insert(adjList,3,4);
-    insert(adjList,4,0);
-    insert(adjList,4,1);
-    insert(adjList,4,3);
+    // insert(adjList,1,3);
+    // insert(adjList,1,4);
+    // insert(adjList,2,1);
+    // insert(adjList,2,3);
+    // insert(adjList,3,1);
+    // insert(adjList,3,2);
+    // insert(adjList,3,4);
+    // insert(adjList,4,0);
+    // insert(adjList,4,1);
+    // insert(adjList,4,3);
     cout<<"Adjacent List: \n";
     printadjList(adjList,edges);
     vector<vector<int>>adjMatrix=convert(adjList,edges);

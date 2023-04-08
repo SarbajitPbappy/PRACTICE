@@ -1,0 +1,22 @@
+For Dijkstra Algorithm->
+    Input: Graph and a Source
+    Output: Distance Source to all Nodes.
+
+Pseudocode:
+    1. Create a visited array V[N] // N means const size
+    2. Create a distance array d[N] // N means const size
+        -> set all value of d[N] to Infinity
+        -> set d[src]=0
+        -> set v[nodes]=0
+    3. Run a loop 0 to less than nodes-1 
+        -> check either the nodes are visited or not.
+        -> if visited then we ignore the node
+        -> then find the smallest node distance
+        -> at last make the selected node v[selected]=1 //that means the node is visited
+    4. Then run a loop for all adjacent nodes of selected node
+        -> then use a simple equation 
+            -> distance of selected node + cost of(selected node to the next node) < distance of node
+            -> look like
+                -> d[selected]+cost < d[node]
+                -> if the condition is true then update the value of d[node] with d[selected]+cost
+    5. at last return the distance array
