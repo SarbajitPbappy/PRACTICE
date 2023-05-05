@@ -28,6 +28,6 @@ int main(){
         adj_list[u].push_back(v);
         adj_list[v].push_back(u);
     }
-    int src=0;
+    int src=2;
     bfs(src);
 }

@@ -26,13 +26,13 @@ vector<vector<int>> convert( vector<vector<int>> a)
 int main()
 {
 	vector<vector<int>> a;
-	vector<int> p({0,0,0,0,0,0,0});
-	vector<int> q({0,0,1,1,0,0,0});
-	vector<int> r({0,1,0,0,1,0,0}); 
+	vector<int> p({0,1,0,0,0,0,0});
+	vector<int> q({1,0,1,1,0,1,0});
+	vector<int> r({0,1,0,0,1,0,1}); 
     vector<int> s({0,1,0,0,1,0,0});
     vector<int> t({0,0,1,1,0,1,1});
-    vector<int> u({0,0,0,0,1,0,0});
-    vector<int> v({0,0,0,0,1,0,0});
+    vector<int> u({0,1,0,0,1,0,0});
+    vector<int> v({0,0,1,0,1,0,0});
 	a.push_back(p);
 	a.push_back(q);
 	a.push_back(r);

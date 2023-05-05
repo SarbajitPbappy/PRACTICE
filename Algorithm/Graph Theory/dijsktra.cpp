@@ -38,7 +38,7 @@ int main() {
         adj_list[u].push_back({v,w});
         adj_list[v].push_back({u,w});
     }
-    int src = 1;
+    int src = 2;
     dijkstra(src);
     for(int i=1;i<=nodes;i++) {
         cout<<d[i]<<" ";
