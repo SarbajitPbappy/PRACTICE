@@ -1,26 +1,12 @@
-// https://codeforces.com/problemset/problem/20/C
-// n -> 10^5
-// m -> 10^5
-
-// max_w -> 10^6
-
-// 10^6 * 10^5 -> 10^11
-// O(ElogV)
 
 #include<bits/stdc++.h>
 using namespace std;
-
 const int N = 1e5 + 5;
 const long long INF = 1e18;
-
 vector< pair<int, int> >adj_list[N];
-
 int visited[N], parent[N];
 int nodes, edges;
-
 long long d[N];
-
-
 void dijkstra(int src) {
     for(int i = 1 ; i <= nodes ; i++) {
         d[i] = INF;
@@ -93,30 +79,3 @@ int main() {
     }
     cout<<endl;
 }
-/*
-6 23
-2 3 18
-2 1 3
-1 3 22
-1 6 3
-1 8 3
-1 4 1
-1 2 3
-3 2 18
-3 1 22
-3 7 1
-3 4 2
-6 1 3
-6 7 2
-6 8 2
-7 3 1
-7 6 2
-7 4 4
-8 6 2
-8 1 3
-8 4 10
-4 7 4
-4 8 10
-4 1 1
-ans:2 1 4 3 7
-*/
