@@ -11,18 +11,17 @@ int main()
         nbr_set[i].second = i + 1;
     }
     sort(nbr_set.begin(), nbr_set.end());
-
     int left = 0, right = a - 1;
     while (left < right)
     {
-        if (nbr_set[left].first + nbr_set[right].first < target)
-        {
-            left++;
-        }
         if (nbr_set[left].first + nbr_set[right].first == target)
         {
             cout << nbr_set[left].second << " " << nbr_set[right].second << "\n";
             return 0;
+        }
+        if (nbr_set[left].first + nbr_set[right].first < target)
+        {
+            left++;
         }
         else{
             right--;
