@@ -23,3 +23,33 @@ int main() {
 
     return 0;
 }
+
+#include <bits/stdc++.h>
+using namespace std;
+int knapsack(int n, int K, vector<int>& sizes, vector<int>& values, int i) {
+    if (i == n || K == 0)
+        return 0;
+    if (sizes[i] > K)
+        return knapsack(n, K, sizes, values, i + 1);
+    int include = values[i] + knapsack(n, K - sizes[i], sizes, values, i + 1);
+    int exclude = knapsack(n, K, sizes, values, i + 1);
+    return max(include, exclude);
+}
+
+int main() {
+    int N, K;
+    cin >> N >> K;
+    vector<int> sizes(N), values(N);
+    for (int i = 0; i < N; i++)
+        cin >> sizes[i];
+    for (int i = 0; i < N; i++)
+        cin >> values[i];
+    int maxValue = knapsack(N, K, sizes, values, 0);
+    int leftValue = 0;
+    for (int i = 0; i < N; i++)
+        leftValue += values[i];
+    leftValue -= maxValue;
+    cout << maxValue << endl;
+    cout << leftValue << endl;
+    return 0;
+}
